@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pokedex</title>
+    <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+    <h1>Pokédex</h1>
+    <button class="cadastrar-btn" onclick="location.href='/pokemons/new'">Cadastrar Pokémon</button>
+    <button class="cadastrar-btn" onclick="location.href='/treinador/new'">Cadastrar Treinador</button>
+
+    <!-- Lista de Pokémons -->
+    <h2>Lista de Pokémon</h2>
+    <ul>
+        <% pokemons.forEach(function(pokemon) { %>
+            <li>
+                <a href="/pokemon/<%= pokemon.id %>"><%= pokemon.nome %></a> - <%= pokemon.tipo %>
+            </li>
+        <% }); %>
+    </ul>
+
+    <!-- Lista de Treinadores -->
+    <h2>Lista de Treinadores</h2>
+    <ul>
+        <% treinadores.forEach(function(treinador) { %>
+            <li>
+                <a href="/treinador/<%= treinador.id %>"><%= treinador.nome %></a> - Nível: <%= treinador.level %>
+            </li>
+        <% }); %>
+    </ul>
+</body>
+</html>
