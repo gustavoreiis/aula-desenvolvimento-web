@@ -3,10 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <title><%= treinador.nome %></title>
+    <link rel="stylesheet" href="/exibir.css">
 </head>
 <body>
     <h1><%= treinador.nome %></h1>
-    <p>Tipo: <%= treinador.level %></p>
+
+    <h2>Equipe:</h2>
+    <ul>
+        <% treinador.equipe.forEach(function(pokemon) { %>
+            <li><%= pokemon.nome %> - Tipo: <%= pokemon.tipo %></li>
+        <% }); %>
+    </ul>
+
     <a href="/">Voltar à Pokédex</a>
+    <a href="/selecaoPokemon?treinadorId=<%= treinador.id %>">Selecionar Pokémons</a>
 </body>
 </html>

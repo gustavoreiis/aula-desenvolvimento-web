@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Seleção de Pokémon</title>
+    <link rel="stylesheet" href="/exibir.css">
+</head>
+<body>
+    <h1>Seleção de Pokémons</h1>
+    <% if (errorMessage) { %>
+        <p style="color: red;"><%= errorMessage %></p>
+    <% } %>    
+    <ul>
+        <% pokemons.forEach(function(pokemon) { %>
+            <li>
+                <form action="/treinador/addPokemon" method="POST">
+                    <input type="hidden" name="treinadorId" value="<%= treinadorId %>">
+                    <input type="hidden" name="pokemonId" value="<%= pokemon.id %>">
+                    <%= pokemon.nome %> - <button type="submit">Selecionar</button>
+                </form>
+            </li>
+        <% }); %>
+    </ul>
+</body>
+</html>

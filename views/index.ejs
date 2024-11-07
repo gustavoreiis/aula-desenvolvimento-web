@@ -27,7 +27,7 @@
     <ul>
         <% treinadores.forEach(function(treinador) { %>
             <li>
-                <a href="/treinador/<%= treinador.id %>"><%= treinador.nome %></a> - Nível: <%= treinador.level %>
+                <a href="/treinador/<%= treinador.id %>"><%= treinador.nome %></a> - Número de Pokémon: <%= treinador.numeroPokemon %>
             </li>
         <% }); %>
     </ul>
